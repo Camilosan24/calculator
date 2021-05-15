@@ -1,17 +1,19 @@
-export default class Operations {
-	static sumar(a, b) {
-		return a + b;
-	}
+const handleOperations = (a, b, operation) => {
+	switch (operation) {
+		case "+":
+			return JSON.stringify(JSON.parse(a) + JSON.parse(b));
+		case "-":
+			return JSON.stringify(JSON.parse(a) - JSON.parse(b));
+		case "*":
+			return JSON.stringify(JSON.parse(a) * JSON.parse(b));
+		case "/":
+			return JSON.stringify(JSON.parse(a) / JSON.parse(b));
+		case "%":
+			return JSON.stringify(JSON.parse(a) % JSON.parse(b));
 
-	static restar(a, b) {
-		return a - b;
+		default:
+			return a;
 	}
+};
 
-	static multiplicar(a, b) {
-		return a * b;
-	}
-
-	static dividir(a, b) {
-		return a / b;
-	}
-}
+export default handleOperations;

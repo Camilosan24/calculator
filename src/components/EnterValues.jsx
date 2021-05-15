@@ -1,10 +1,14 @@
 import { useSelector } from "react-redux";
 
 const EnterValues = () => {
-	const valueToShow = useSelector(state => state.valueToShow);
+	const totalValue = useSelector((state) => state.totalValue);
+	const valueToProcess = useSelector((state) => state.valueToProcess);
+	const temporalOperation = useSelector((state) => state.temporalOperation);
 	return (
 		<div className="enter-values-box">
-			<span className="values">{valueToShow}</span>
+			<span className="values">
+				{temporalOperation === '' ? totalValue : valueToProcess}
+			</span>
 		</div>
 	);
 };

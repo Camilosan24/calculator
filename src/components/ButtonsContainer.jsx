@@ -1,10 +1,6 @@
 import Button from "./Button";
 
 const ButtonsContainer = () => {
-	const onClick = (e) => {
-		console.log(e.target);
-	};
-
 	return (
 		<div className="buttons-box">
 			<div className="row">
@@ -27,14 +23,15 @@ const ButtonsContainer = () => {
 			</div>
 			<div className="row">
 				<Button value="/" />
-				<Button value="x" />
+				<Button value="*" />
 				<Button value="-" />
 				<Button value="+" />
 			</div>
 			<div className="row">
-				<Button value={<i className="fas fa-backspace"></i>} delete={true} />
+				<Button value={<i className="fas fa-backspace"></i>} deleteValue={true} />
+				<Button value="AC" />
 				<Button value="%" />
-				<Button value="=" grow={true} />
+				<Button value="=" />
 			</div>
 		</div>
 	);
